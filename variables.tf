@@ -4,4 +4,5 @@ variable region {
 
 variable domain {
   default = "nalbam.com"
+  description = "The Hosted Zone name of the desired Hosted Zone."
 }
