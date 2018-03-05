@@ -5,6 +5,7 @@ data "aws_route53_zone" "default" {
 data "aws_acm_certificate" "default" {
   domain = "${var.domain}"
   statuses = [
-    "AMAZON_ISSUED"
+    "ISSUED"
   ]
+  most_recent = true
 }
