@@ -3,5 +3,5 @@ variable region {
 }
 
 variable domain {
-  default = "demo.com"
+  default = "nalbam.com"
 }
