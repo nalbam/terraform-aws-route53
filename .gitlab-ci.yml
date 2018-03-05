@@ -19,7 +19,7 @@ before_script:
 plan:
   stage: plan
   script:
-    - terraform validate -var-file=$VARS
+    - terraform validate
     - terraform plan -out=$PLAN
 
 after_script:
