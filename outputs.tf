@@ -1,11 +1,15 @@
-output "route53_zone_id" {
+output "zone_id" {
   value = "${data.aws_route53_zone.default.id}"
 }
 
-output "acm_certificate_id" {
+output "name" {
+  value = "${data.aws_route53_zone.default.name}"
+}
+
+output "certificate_id" {
   value = "${data.aws_acm_certificate.default.id}"
 }
 
-output "acm_certificate_arn" {
+output "certificate_arn" {
   value = "${data.aws_acm_certificate.default.arn}"
 }
