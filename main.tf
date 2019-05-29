@@ -1,11 +1,11 @@
 data "aws_route53_zone" "default" {
-  name = "${var.domain}"
+  name = var.domain
 }
 
 data "aws_acm_certificate" "default" {
-  domain = "${var.domain}"
+  domain = var.domain
   statuses = [
-    "ISSUED"
+    "ISSUED",
   ]
   most_recent = true
 }
