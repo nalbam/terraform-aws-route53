@@ -5,11 +5,6 @@ variable "region" {
   default     = "us-east-1"
 }
 
-variable "domain_root" {
-  default = ""
-}
-
-variable "domain_name" {
-  type    = list(string)
-  default = []
+variable "domain" {
+  description = "The Hosted Zone name of the desired Hosted Zone."
 }
