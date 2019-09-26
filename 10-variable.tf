@@ -8,3 +8,7 @@ variable "region" {
 variable "domain" {
   description = "The Hosted Zone name of the desired Hosted Zone."
 }
+
+variable "acm_certificate" {
+  default = false
+}

@@ -9,9 +9,9 @@ output "name" {
 }
 
 output "certificate_id" {
-  value = data.aws_acm_certificate.this.id
+  value = var.acm_certificate ? aws_acm_certificate.this[0].id : data.aws_acm_certificate.this[0].id
 }
 
 output "certificate_arn" {
-  value = data.aws_acm_certificate.this.arn
+  value = var.acm_certificate ? data.aws_acm_certificate.this[0].arn : data.aws_acm_certificate.this[0].arn
 }
