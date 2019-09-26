@@ -15,7 +15,7 @@ resource "aws_acm_certificate" "cert" {
 resource "aws_route53_record" "cert" {
   count = var.acm_certificate ? 1 : 0
 
-  zone_id = data.aws_route53_zone.this[0].id
+  zone_id = data.aws_route53_zone.this.id
   name    = aws_acm_certificate.cert[0].domain_validation_options[0].resource_record_name
   type    = aws_acm_certificate.cert[0].domain_validation_options[0].resource_record_type
   ttl     = 60
