@@ -3,10 +3,10 @@
 resource "aws_acm_certificate" "cert" {
   count = var.acm_certificate ? 1 : 0
 
-  domain_name = var.domain
+  domain_name = local.domain_name
 
   subject_alternative_names = [
-    "*.${var.domain}"
+    "*.${local.domain_name}"
   ]
 
   validation_method = "DNS"

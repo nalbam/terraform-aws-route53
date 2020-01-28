@@ -5,8 +5,12 @@ variable "region" {
   default     = "us-east-1"
 }
 
-variable "domain" {
+variable "root_domain" {
   description = "The Hosted Zone name of the desired Hosted Zone."
+}
+
+variable "domain_name" {
+  default = ""
 }
 
 variable "acm_certificate" {
