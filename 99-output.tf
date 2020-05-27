@@ -15,3 +15,7 @@ output "certificate_id" {
 output "certificate_arn" {
   value = local.certificate_arn
 }
+
+output "certificate_fqdn" {
+  value = local.certificate_fqdn
+}
