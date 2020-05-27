@@ -9,5 +9,6 @@ output "name" {
 }
 
 output "certificate_arn" {
-  value = local.certificate_arn
+  # value = local.certificate_arn
+  value = aws_acm_certificate.cert.arn
 }
