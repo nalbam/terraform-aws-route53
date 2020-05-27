@@ -31,9 +31,9 @@ resource "aws_route53_record" "cert" {
 }
 
 resource "aws_acm_certificate_validation" "cert" {
-  count = var.acm_certificate ? 1 : 0
+  count = var.acm_certificate ? length(aws_route53_record.cert) == 1 ? 1 : 0 : 0
 
-  certificate_arn = aws_acm_certificate.cert.0.arn
+  certificate_arn = local.certificate_arn
 
   validation_record_fqdns = [
     aws_route53_record.cert.0.fqdn,
