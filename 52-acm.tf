@@ -24,23 +24,14 @@ resource "aws_route53_record" "cert" {
   records = [
     aws_acm_certificate.cert.0.domain_validation_options.0.resource_record_value,
   ]
-
-  depends_on = [
-    aws_acm_certificate.cert,
-  ]
 }
 
 resource "aws_acm_certificate_validation" "cert" {
   count = var.acm_certificate ? 1 : 0
 
-  certificate_arn = aws_acm_certificate.cert.0.arn
+  certificate_arn = local.certificate_arn
 
   validation_record_fqdns = [
     aws_route53_record.cert.0.fqdn,
-  ]
-
-  depends_on = [
-    aws_acm_certificate.cert,
-    aws_route53_record.cert,
   ]
 }
