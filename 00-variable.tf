@@ -13,6 +13,6 @@ variable "domain_name" {
   default = ""
 }
 
-# variable "acm_certificate" {
-#   default = false
-# }
+variable "acm_certificate" {
+  default = false
+}
